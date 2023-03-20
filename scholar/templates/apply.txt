@@ -1,0 +1,31 @@
+{% autoescape off %}
+Dear {{ user }},
+
+
+You have successfully applied for {{data.scholarship}}.
+Here are your application details:
+
+username: {{user}}
+Email: {{data.email}}
+Date of birth: {{data.date_of_birth}}
+matric no: {{data.matric_no}}
+school: {{data.school}}
+level: {{data.level}}
+department: {{data.department}}
+CGPA: {{data.cgpa}}
+
+An email will be sent to you when you have been awarded the scholarship.
+View and edit your application details here:
+
+http://{{ domain }}{% url 'status' data.scholarship.pk %}
+
+
+
+This message was sent to {{data.email}} because you have applied for a scholarship with us.
+If you did not make this request, you can simply ignore this email.
+
+
+Best Regards,
+Administrator
+{{data.date}}
+{% endautoescape %}  

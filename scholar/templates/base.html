@@ -1,0 +1,10 @@
+<h1>Macrophages Group of Companies</h1>
+<br><br>
+<a href="{% url 'home' %}">Home</a>
+{% if messages %}<br><br>
+{% for message in messages %}
+<p>{{message|safe}}</p>
+{%endfor%}
+{%endif%}
+<br><hr><br>
+{% block content %} {%endblock%}

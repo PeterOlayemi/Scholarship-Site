@@ -1,0 +1,12 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<h2>Available Scholarship(s)</h2><br><br>
+{% for obj in obj %}
+{% if obj.available == True %}
+- <a href="{% url 'info' obj.pk %}">{{obj.name}}</a><br><br>
+{%endif%}
+{%empty%}
+<p>No available scholarship</p>
+{%endfor%}
+{%endblock%}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{%block content%}
+<h2>{% if obj %}Apply for {{obj.name}}{% elif data %}update application for {{data.scholarship.name}}{%endif%}</h2>
+{% if obj %}<a href="{% url 'info' obj.pk %}">Back</a>{% elif data %}<a href="{% url 'status' data.scholarship.pk %}">Back</a>{% endif %}
+<br><br>
+<form method="post" enctype="multipart/form-data">
+{%csrf_token%}
+{{form.as_p}}
+{% if obj %}<input type="submit" value="apply">{% elif data %}<input type="submit" value="update">{% endif %}
+</form>
+{%endblock%}

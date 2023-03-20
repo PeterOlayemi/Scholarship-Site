@@ -1,0 +1,20 @@
+{% autoescape off %}
+Dear {{ user.username }},
+
+
+You have successfully registered with Macrophages Group of Companies.
+To activate your account, click the link below or paste it in your browser.
+
+http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
+
+This link expires in 72 hours and your registration will be deleted from the database.
+
+
+This message was sent to {{user.email}} because you have registered with us.
+If you did not make this request, you can simply ignore this email.
+
+
+Best Regards,
+Administrator
+{{user.date_joined.date}}
+{% endautoescape %}  

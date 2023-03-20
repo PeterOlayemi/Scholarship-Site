@@ -1,0 +1,7 @@
+{% extends 'base.html'%}
+
+{%block content%}
+<h2>{{obj.name}}</h2>
+<a href="{% url 'available' %}">Back</a> {% if applied == True %} &nbsp; &nbsp;<a href="{% url 'status' obj.pk %}">Check application details</a>{%else%} &nbsp; &nbsp; <a href="{% url 'apply' obj.pk %}">Apply Now</a>{%endif%}
+<p>{{obj.description}}</p>
+{%endblock%}
